@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		596DD0E72A909FA1C7A82A28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD479A45870CEE6DD6813 /* Info.plist */; };
+		596DD0E9A92A408FCE3C5C01 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */; };
+		596DD1DC2DBFAA8E775F5BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDF999270AB83A09AC380 /* AppDelegate.swift */; };
+		596DD4FD890ACE676FA875CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596DDFB6AC7EE6226702D937 /* MainMenu.xib */; };
+		596DD82AF4F65BA6CDEE4826 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DDA7BC7018DF359F0B009 /* Info.plist */; };
+		596DD8A01363AB94E8A1E325 /* blockens_3dUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */; };
+		596DD8BCE322E28639556188 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DDC7839F84B90C561748E /* Shaders.metal */; };
+		596DDB50984E1AE4C24DCC63 /* blockens_3dTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */; };
+		596DDB5E86FA76611A19315C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596DDF6D2A95946157A60D17 /* Assets.xcassets */; };
+		596DDB79F987AE4F16373A1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD406CD0FC44F6ED4F54C /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		596DD85FBC67EAFD54317B7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 596DD58B37C26788665186D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 596DD842CB4E84F73A2E08AD;
+			remoteInfo = "blockens-3d";
+		};
+		596DD86AAFA3D1CEE09DAFC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 596DD58B37C26788665186D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 596DD842CB4E84F73A2E08AD;
+			remoteInfo = "blockens-3d";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dUITests.swift; sourceTree = "<group>"; };
+		596DD3463B613A42B8813707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		596DD406CD0FC44F6ED4F54C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DD479A45870CEE6DD6813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DD83261EA66C329B0D0A4 /* blockens-3dTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		596DDA7BC7018DF359F0B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DDA9F6D96604ABA824DA1 /* blockens-3d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockens-3d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dTests.swift; sourceTree = "<group>"; };
+		596DDC7839F84B90C561748E /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		596DDF09754425A05328D667 /* blockens-3dUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		596DDF6D2A95946157A60D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		596DDF999270AB83A09AC380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		596DD0EBD09E3A00A136A795 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DD16725F152A43E038164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DDC4CBC7696A982391113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		596DD0BB2693A44A7E92B0D0 /* blockens-3dTests */ = {
+			isa = PBXGroup;
+			children = (
+				596DDA7BC7018DF359F0B009 /* Info.plist */,
+				596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */,
+			);
+			path = "blockens-3dTests";
+			sourceTree = "<group>";
+		};
+		596DD6A71E071871CA1E7265 /* blockens-3d */ = {
+			isa = PBXGroup;
+			children = (
+				596DD406CD0FC44F6ED4F54C /* Info.plist */,
+				596DDF6D2A95946157A60D17 /* Assets.xcassets */,
+				596DDF999270AB83A09AC380 /* AppDelegate.swift */,
+				596DDFB6AC7EE6226702D937 /* MainMenu.xib */,
+				596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */,
+				596DDC7839F84B90C561748E /* Shaders.metal */,
+			);
+			path = "blockens-3d";
+			sourceTree = "<group>";
+		};
+		596DD892C9F874AA6AB06DEF /* blockens-3dUITests */ = {
+			isa = PBXGroup;
+			children = (
+				596DD479A45870CEE6DD6813 /* Info.plist */,
+				596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */,
+			);
+			path = "blockens-3dUITests";
+			sourceTree = "<group>";
+		};
+		596DD9B739A2B99D8E90BCEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				596DDA9F6D96604ABA824DA1 /* blockens-3d.app */,
+				596DD83261EA66C329B0D0A4 /* blockens-3dTests.xctest */,
+				596DDF09754425A05328D667 /* blockens-3dUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		596DDC74C84D7A3C32E4CBDD = {
+			isa = PBXGroup;
+			children = (
+				596DD9B739A2B99D8E90BCEE /* Products */,
+				596DD6A71E071871CA1E7265 /* blockens-3d */,
+				596DD0BB2693A44A7E92B0D0 /* blockens-3dTests */,
+				596DD892C9F874AA6AB06DEF /* blockens-3dUITests */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		596DD2D0DDABCF6EA96CEB99 /* blockens-3dUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 596DDF83A10CDFA9B6E0B92B /* Build configuration list for PBXNativeTarget "blockens-3dUITests" */;
+			buildPhases = (
+				596DD1C169A397DEB526B91D /* Sources */,
+				596DD0EBD09E3A00A136A795 /* Frameworks */,
+				596DD17CE9731CA19E8D241A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				596DD271D5E07ED5211E11B2 /* PBXTargetDependency */,
+			);
+			name = "blockens-3dUITests";
+			productName = "blockens-3dUITests";
+			productReference = 596DDF09754425A05328D667 /* blockens-3dUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		596DD6381C775158BD46A687 /* blockens-3dTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 596DDEC1D9E25FA91E550A24 /* Build configuration list for PBXNativeTarget "blockens-3dTests" */;
+			buildPhases = (
+				596DD177F98CBDFDA2870780 /* Sources */,
+				596DDC4CBC7696A982391113 /* Frameworks */,
+				596DDC8EB4DF3F6C8BE07902 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				596DD445DA196E26CDCD5327 /* PBXTargetDependency */,
+			);
+			name = "blockens-3dTests";
+			productName = "blockens-3dTests";
+			productReference = 596DD83261EA66C329B0D0A4 /* blockens-3dTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		596DD842CB4E84F73A2E08AD /* blockens-3d */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 596DDDFFA1FD2B815BBC825F /* Build configuration list for PBXNativeTarget "blockens-3d" */;
+			buildPhases = (
+				596DD119BC45611B7ABE5319 /* Sources */,
+				596DD16725F152A43E038164 /* Frameworks */,
+				596DD8E9E97F8F891B3C07FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "blockens-3d";
+			productName = "blockens-3d";
+			productReference = 596DDA9F6D96604ABA824DA1 /* blockens-3d.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		596DD58B37C26788665186D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = apphacker;
+			};
+			buildConfigurationList = 596DD3D106E373DA1DD951FF /* Build configuration list for PBXProject "blockens-3d" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 596DDC74C84D7A3C32E4CBDD;
+			productRefGroup = 596DD9B739A2B99D8E90BCEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				596DD842CB4E84F73A2E08AD /* blockens-3d */,
+				596DD6381C775158BD46A687 /* blockens-3dTests */,
+				596DD2D0DDABCF6EA96CEB99 /* blockens-3dUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		596DD17CE9731CA19E8D241A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DD0E72A909FA1C7A82A28 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DD8E9E97F8F891B3C07FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DDB79F987AE4F16373A1D /* Info.plist in Resources */,
+				596DDB5E86FA76611A19315C /* Assets.xcassets in Resources */,
+				596DD4FD890ACE676FA875CD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DDC8EB4DF3F6C8BE07902 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DD82AF4F65BA6CDEE4826 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		596DD119BC45611B7ABE5319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DD1DC2DBFAA8E775F5BD2 /* AppDelegate.swift in Sources */,
+				596DD0E9A92A408FCE3C5C01 /* GameViewController.swift in Sources */,
+				596DD8BCE322E28639556188 /* Shaders.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DD177F98CBDFDA2870780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DDB50984E1AE4C24DCC63 /* blockens_3dTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596DD1C169A397DEB526B91D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596DD8A01363AB94E8A1E325 /* blockens_3dUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		596DD271D5E07ED5211E11B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 596DD842CB4E84F73A2E08AD /* blockens-3d */;
+			targetProxy = 596DD85FBC67EAFD54317B7C /* PBXContainerItemProxy */;
+		};
+		596DD445DA196E26CDCD5327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 596DD842CB4E84F73A2E08AD /* blockens-3d */;
+			targetProxy = 596DD86AAFA3D1CEE09DAFC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		596DDFB6AC7EE6226702D937 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				596DD3463B613A42B8813707 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		596DD410FB223EE26E411860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blockens-3d.app/Contents/MacOS/blockens-3d";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3dTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3dTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		596DD5EBE6ED2E644878FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3d/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3d";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		596DD797AE22FF0EC21769D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		596DD868BF3331FD85F39550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3d/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3d";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		596DD8A5EE66EB819357F199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		596DDA8AF95E5DA51CE9BBEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blockens-3d.app/Contents/MacOS/blockens-3d";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3dUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3dUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		596DDE47B886D1486AFBC244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blockens-3d.app/Contents/MacOS/blockens-3d";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3dUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3dUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		596DDF51F41965309A668FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blockens-3d.app/Contents/MacOS/blockens-3d";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "blockens-3dTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apphacker.blockens-3dTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		596DD3D106E373DA1DD951FF /* Build configuration list for PBXProject "blockens-3d" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596DD797AE22FF0EC21769D3 /* Debug */,
+				596DD8A5EE66EB819357F199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		596DDDFFA1FD2B815BBC825F /* Build configuration list for PBXNativeTarget "blockens-3d" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596DD5EBE6ED2E644878FB75 /* Debug */,
+				596DD868BF3331FD85F39550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		596DDEC1D9E25FA91E550A24 /* Build configuration list for PBXNativeTarget "blockens-3dTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596DD410FB223EE26E411860 /* Debug */,
+				596DDF51F41965309A668FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		596DDF83A10CDFA9B6E0B92B /* Build configuration list for PBXNativeTarget "blockens-3dUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596DDA8AF95E5DA51CE9BBEE /* Debug */,
+				596DDE47B886D1486AFBC244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 596DD58B37C26788665186D6 /* Project object */;
+}
