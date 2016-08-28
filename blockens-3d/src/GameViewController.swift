@@ -42,6 +42,7 @@ class GameViewController: NSViewController, MTKViewDelegate {
         // Add render controllers, order matters.
         let renderControllers: [RenderController] = [
                 SkyController(),
+                CubeController(),
         ]
 
         for renderController in renderControllers {

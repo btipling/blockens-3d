@@ -6,18 +6,14 @@
 import Foundation
 import MetalKit
 
-struct SkyInfo {
-    var tickCount: Int32
-    var viewDiffRatio : Float32
-}
 
-class SkyRenderer: Renderer {
+class CubeRenderer: Renderer {
 
     let renderUtils: RenderUtils
 
     var pipelineState: MTLRenderPipelineState! = nil
 
-    var skyVertexBuffer: MTLBuffer! = nil
+    var cubeVertexBuffer: MTLBuffer! = nil
 
     init (utils: RenderUtils) {
         renderUtils = utils
@@ -25,17 +21,20 @@ class SkyRenderer: Renderer {
 
     func loadAssets(device: MTLDevice, view: MTKView, frameInfo: FrameInfo) {
 
-        pipelineState = renderUtils.createPipeLineState("skyVertex", fragment: "skyFragment", device: device, view: view)
-        skyVertexBuffer = renderUtils.createRectangleVertexBuffer(device, bufferLabel: "sky vertices")
+        pipelineState = renderUtils.createPipeLineState("cubeVertex", fragment: "cubeFragment", device: device, view: view)
+        cubeVertexBuffer = renderUtils.createRectangleVertexBuffer(device, bufferLabel: "cube vertices")
 
-        print("loading sky assets done")
+
+        print("loading cube assets done")
     }
+
+
 
     func render(renderEncoder: MTLRenderCommandEncoder) {
 
-        renderUtils.setPipeLineState(renderEncoder, pipelineState: pipelineState, name: "sky")
+        renderUtils.setPipeLineState(renderEncoder, pipelineState: pipelineState, name: "cube")
 
-        for (i, vertexBuffer) in [skyVertexBuffer].enumerate() {
+        for (i, vertexBuffer) in [cubeVertexBuffer].enumerate() {
             renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: i)
         }
 

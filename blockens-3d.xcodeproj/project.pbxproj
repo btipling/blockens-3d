@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		596DD09A2B3F4FAF834B233D /* CubeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDB7FC304FDA70329A38C /* CubeController.swift */; };
 		596DD0E72A909FA1C7A82A28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD479A45870CEE6DD6813 /* Info.plist */; };
 		596DD20F298C86E343B81ACE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDF03BA825BFDBE03A249 /* GameViewController.swift */; };
 		596DD3C82B2446FD7C0B7239 /* SkyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD07DEDB38E87C5ECA674 /* SkyController.swift */; };
@@ -14,7 +15,9 @@
 		596DD45A55CF1A676FC7D878 /* Sky.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DD2A12D37746D3D063F34 /* Sky.metal */; };
 		596DD4A53617B66CB17A7FE5 /* RendererController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD4B5DDDC846761EB3385 /* RendererController.swift */; };
 		596DD4FD890ACE676FA875CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596DDFB6AC7EE6226702D937 /* MainMenu.xib */; };
+		596DD5EBFB1784D234D79465 /* Cube.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DDA9C84D75CE90E171D7B /* Cube.metal */; };
 		596DD7431400248B105E0266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD137D35567AD50205564 /* AppDelegate.swift */; };
+		596DD7ADC67140322DD410A4 /* CubeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDC9446643123FD79B127 /* CubeRenderer.swift */; };
 		596DD81F1506BA2E49DBA005 /* RenderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */; };
 		596DD82AF4F65BA6CDEE4826 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DDA7BC7018DF359F0B009 /* Info.plist */; };
 		596DD8A01363AB94E8A1E325 /* blockens_3dUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */; };
@@ -59,8 +62,11 @@
 		596DD8C96EC291616B9C8A41 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		596DD9357DD8A842FE83D10E /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		596DDA7BC7018DF359F0B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DDA9C84D75CE90E171D7B /* Cube.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Cube.metal; sourceTree = "<group>"; };
 		596DDA9F6D96604ABA824DA1 /* blockens-3d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockens-3d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		596DDB7FC304FDA70329A38C /* CubeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeController.swift; sourceTree = "<group>"; };
 		596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dTests.swift; sourceTree = "<group>"; };
+		596DDC9446643123FD79B127 /* CubeRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeRenderer.swift; sourceTree = "<group>"; };
 		596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderUtils.swift; sourceTree = "<group>"; };
 		596DDF03BA825BFDBE03A249 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		596DDF09754425A05328D667 /* blockens-3dUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,12 +148,22 @@
 			);
 			sourceTree = "<group>";
 		};
+		596DDC7BF1F3B8E1C9CB86DD /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				596DDC9446643123FD79B127 /* CubeRenderer.swift */,
+				596DDB7FC304FDA70329A38C /* CubeController.swift */,
+			);
+			path = Cube;
+			sourceTree = "<group>";
+		};
 		596DDCC67609CAA0709CF942 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
 				596DD2A12D37746D3D063F34 /* Sky.metal */,
 				596DD8C96EC291616B9C8A41 /* utils.h */,
 				596DD2C9C80634012D035FD5 /* utils.metal */,
+				596DDA9C84D75CE90E171D7B /* Cube.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 				596DD40C95A85FFE9D085E6E /* utils.swift */,
 				596DDD978E04C93DFAAFDFD7 /* Sky */,
 				596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */,
+				596DDC7BF1F3B8E1C9CB86DD /* Cube */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -303,6 +320,9 @@
 				596DD45A55CF1A676FC7D878 /* Sky.metal in Sources */,
 				596DD81F1506BA2E49DBA005 /* RenderUtils.swift in Sources */,
 				596DD43B22CE92BB258E5D4C /* utils.metal in Sources */,
+				596DD7ADC67140322DD410A4 /* CubeRenderer.swift in Sources */,
+				596DD09A2B3F4FAF834B233D /* CubeController.swift in Sources */,
+				596DD5EBFB1784D234D79465 /* Cube.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
