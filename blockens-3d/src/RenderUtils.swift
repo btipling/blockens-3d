@@ -28,10 +28,108 @@ class RenderUtils {
             1.0,  1.0,
     ]
 
+    let cubeVertexData: [Float32] = [
+
+        // Front face
+        // - ff left triangle
+        -1.0, 1.0, -1.0,
+        1.0, 1.0, -1.0,
+        -1.0, -1.0, -1.0,
+
+        // - ff right triangle
+        1.0, 1.0, -1.0,
+        1.0, -1.0, -1.0,
+        -1.0, -1.0, -1.0,
+
+
+        // Back face
+        // - bf left triangle
+        -1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0,
+        -1.0, -1.0, 1.0,
+
+        // - bf right triangle
+        1.0, 1.0, 1.0,
+        1.0, -1.0, 1.0,
+        -1.0, -1.0, 1.0,
+
+
+        // Left face
+        // - lf left triangle
+        -1.0, 1.0, 1.0,
+        -1.0, 1.0, -1.0,
+        -1.0, -1.0, 1.0,
+
+        // - lf right triangle
+        -1.0, 1.0, -1.0,
+        -1.0, -1.0, -1.0,
+        -1.0, -1.0, 1.0,
+
+
+        // Right face
+        // - rf left triangle
+        1.0, 1.0, -1.0,
+        1.0, 1.0, 1.0,
+        1.0, -1.0, -1.0,
+
+        // - rf right triangle
+        1.0, 1.0, 1.0,
+        1.0, -1.0, 1.0,
+        1.0, -1.0, -1.0,
+
+
+        // Top face
+        // - tf left triangle
+        -1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0,
+        -1.0, 1.0, -1.0,
+
+        // - tf right triangle
+        1.0, 1.0, 1.0,
+        1.0, 1.0, -1.0,
+        -1.0, 1.0, -1.0,
+
+
+        // Bottom face
+        // - bf left triangle
+        -1.0, -1.0, 1.0,
+        1.0, -1.0, 1.0,
+        -1.0, -1.0, -1.0,
+
+        // - bf right triangle
+        1.0, -1.0, 1.0,
+        1.0, -1.0, -1.0,
+        -1.0, -1.0, -1.0,
+    ]
+
+    let cubeColors: [Float32] = [
+        // front
+        0.5, 0.0, 0.0,
+        // back
+        0.0, 0.5, 0.0,
+        // left
+        0.0, 0.0, 0.5,
+        // right
+        0.5, 0.5, 0.0,
+        // top
+        0.5, 0.0, 0.5,
+        // bottom
+        0.0, 0.5, 0.5,
+
+    ];
+
     let CONSTANT_BUFFER_SIZE = 1024*1024
 
     func numVerticesInARectangle() -> Int {
         return rectangleVertexData.count/2 // Divided by 2 because each pair is x,y for a single vertex.
+    }
+
+    func numVerticesInACube() -> Int {
+        return cubeVertexData.count/3 // Divided by 3 because each pair is x,y,z for a single vertex.
+    }
+
+    func numCubeColors() -> Int {
+        return cubeColors.count/3 // Divided by 3 because RGB.
     }
 
     func loadTexture(device: MTLDevice, name: String) -> MTLTexture {
@@ -95,6 +193,15 @@ class RenderUtils {
 
         let bufferSize = rectangleVertexData.count * sizeofValue(rectangleVertexData[0])
         let buffer = device.newBufferWithBytes(rectangleVertexData, length: bufferSize, options: [])
+        buffer.label = bufferLabel
+
+        return buffer
+    }
+
+    func createCubeVertexBuffer(device: MTLDevice, bufferLabel: String) -> MTLBuffer {
+
+        let bufferSize = cubeVertexData.count * sizeofValue(cubeVertexData[0])
+        let buffer = device.newBufferWithBytes(cubeVertexData, length: bufferSize, options: [])
         buffer.label = bufferLabel
 
         return buffer
