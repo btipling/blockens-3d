@@ -8,18 +8,23 @@
 
 #include "utils.h"
 
-vertex VertextOut cubeVertex(uint vid [[ vertex_id ]],
-                                     constant packed_float2* position  [[ buffer(0) ]]) {
+vertex CubeOut cubeVertex(uint vid [[ vertex_id ]],
+                                     constant packed_float3* position  [[ buffer(0) ]],
+                                     constant packed_float3* colors  [[ buffer(1) ]]) {
 
-    VertextOut outVertex;
+    CubeOut outVertex;
 
-    float2 pos = position[vid];
-    pos *= 0.5;
-    outVertex.position = float4(pos[0], pos[1], 0.0, 1.0);
+    float3 pos = position[vid];
+    outVertex.position = float4(pos[0], pos[1], pos[2], 1.0);
+
+    uint face = vid / 6;
+    float3 color = colors[face % 6];
+    outVertex.color = float4(color[0], color[1], color[3], 1.0);
+
     return outVertex;
 }
 
-fragment float4 cubeFragment(VertextOut inFrag [[stage_in]]) {
+fragment float4 cubeFragment(CubeOut inFrag [[stage_in]]) {
 
-    return float4(0.0, 0.5, 1.0, 1.0);
+    return inFrag.color;
 }

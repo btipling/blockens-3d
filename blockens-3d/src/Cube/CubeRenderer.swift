@@ -14,6 +14,7 @@ class CubeRenderer: Renderer {
     var pipelineState: MTLRenderPipelineState! = nil
 
     var cubeVertexBuffer: MTLBuffer! = nil
+    var colorBuffer: MTLBuffer! = nil
 
     init (utils: RenderUtils) {
         renderUtils = utils
@@ -22,7 +23,9 @@ class CubeRenderer: Renderer {
     func loadAssets(device: MTLDevice, view: MTKView, frameInfo: FrameInfo) {
 
         pipelineState = renderUtils.createPipeLineState("cubeVertex", fragment: "cubeFragment", device: device, view: view)
-        cubeVertexBuffer = renderUtils.createRectangleVertexBuffer(device, bufferLabel: "cube vertices")
+        cubeVertexBuffer = renderUtils.createCubeVertexBuffer(device, bufferLabel: "cube vertices")
+        colorBuffer = renderUtils.createBufferFromFloatArray(device, count: renderUtils.cubeColors.count, bufferLabel: "cube colors")
+        renderUtils.updateBufferFromFloatArray(colorBuffer, data: renderUtils.cubeColors)
 
 
         print("loading cube assets done")
@@ -34,11 +37,11 @@ class CubeRenderer: Renderer {
 
         renderUtils.setPipeLineState(renderEncoder, pipelineState: pipelineState, name: "cube")
 
-        for (i, vertexBuffer) in [cubeVertexBuffer].enumerate() {
+        for (i, vertexBuffer) in [cubeVertexBuffer, colorBuffer].enumerate() {
             renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: i)
         }
 
-        renderUtils.drawPrimitives(renderEncoder, vertexCount: renderUtils.numVerticesInARectangle())
+        renderUtils.drawPrimitives(renderEncoder, vertexCount: renderUtils.numVerticesInACube())
 
     }
 }
