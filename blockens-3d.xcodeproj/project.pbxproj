@@ -8,15 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		596DD0E72A909FA1C7A82A28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD479A45870CEE6DD6813 /* Info.plist */; };
-		596DD0E9A92A408FCE3C5C01 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */; };
-		596DD1DC2DBFAA8E775F5BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDF999270AB83A09AC380 /* AppDelegate.swift */; };
+		596DD20F298C86E343B81ACE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDF03BA825BFDBE03A249 /* GameViewController.swift */; };
+		596DD3C82B2446FD7C0B7239 /* SkyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD07DEDB38E87C5ECA674 /* SkyController.swift */; };
+		596DD43B22CE92BB258E5D4C /* utils.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DD2C9C80634012D035FD5 /* utils.metal */; };
+		596DD45A55CF1A676FC7D878 /* Sky.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DD2A12D37746D3D063F34 /* Sky.metal */; };
+		596DD4A53617B66CB17A7FE5 /* RendererController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD4B5DDDC846761EB3385 /* RendererController.swift */; };
 		596DD4FD890ACE676FA875CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596DDFB6AC7EE6226702D937 /* MainMenu.xib */; };
+		596DD7431400248B105E0266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD137D35567AD50205564 /* AppDelegate.swift */; };
+		596DD81F1506BA2E49DBA005 /* RenderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */; };
 		596DD82AF4F65BA6CDEE4826 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DDA7BC7018DF359F0B009 /* Info.plist */; };
 		596DD8A01363AB94E8A1E325 /* blockens_3dUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */; };
-		596DD8BCE322E28639556188 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DDC7839F84B90C561748E /* Shaders.metal */; };
+		596DD8D9C98B33BEEA6C7432 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD40C95A85FFE9D085E6E /* utils.swift */; };
+		596DD93F54725EAAC882A0E4 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD9357DD8A842FE83D10E /* Renderer.swift */; };
 		596DDB50984E1AE4C24DCC63 /* blockens_3dTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */; };
 		596DDB5E86FA76611A19315C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596DDF6D2A95946157A60D17 /* Assets.xcassets */; };
 		596DDB79F987AE4F16373A1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD406CD0FC44F6ED4F54C /* Info.plist */; };
+		596DDD816D90179935EA4F96 /* SkyRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD79B526A7D6A0CCE5484 /* SkyRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +44,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		596DD07DEDB38E87C5ECA674 /* SkyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyController.swift; sourceTree = "<group>"; };
+		596DD137D35567AD50205564 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		596DD1C91E4FFB9925C60D40 /* blockens_3dUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dUITests.swift; sourceTree = "<group>"; };
+		596DD2A12D37746D3D063F34 /* Sky.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sky.metal; sourceTree = "<group>"; };
+		596DD2C9C80634012D035FD5 /* utils.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = utils.metal; sourceTree = "<group>"; };
 		596DD3463B613A42B8813707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		596DD406CD0FC44F6ED4F54C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DD40C95A85FFE9D085E6E /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		596DD479A45870CEE6DD6813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		596DD4B5DDDC846761EB3385 /* RendererController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RendererController.swift; sourceTree = "<group>"; };
+		596DD79B526A7D6A0CCE5484 /* SkyRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyRenderer.swift; sourceTree = "<group>"; };
 		596DD83261EA66C329B0D0A4 /* blockens-3dTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		596DD8C96EC291616B9C8A41 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		596DD9357DD8A842FE83D10E /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		596DDA7BC7018DF359F0B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		596DDA9F6D96604ABA824DA1 /* blockens-3d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockens-3d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dTests.swift; sourceTree = "<group>"; };
-		596DDC7839F84B90C561748E /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderUtils.swift; sourceTree = "<group>"; };
+		596DDF03BA825BFDBE03A249 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		596DDF09754425A05328D667 /* blockens-3dUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		596DDF6D2A95946157A60D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		596DDF999270AB83A09AC380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +106,9 @@
 			children = (
 				596DD406CD0FC44F6ED4F54C /* Info.plist */,
 				596DDF6D2A95946157A60D17 /* Assets.xcassets */,
-				596DDF999270AB83A09AC380 /* AppDelegate.swift */,
 				596DDFB6AC7EE6226702D937 /* MainMenu.xib */,
-				596DD8E3F8BE4E70DE18D937 /* GameViewController.swift */,
-				596DDC7839F84B90C561748E /* Shaders.metal */,
+				596DDD5243EAC3C4D6E8D61C /* src */,
+				596DDCC67609CAA0709CF942 /* shaders */,
 			);
 			path = "blockens-3d";
 			sourceTree = "<group>";
@@ -126,6 +140,39 @@
 				596DD0BB2693A44A7E92B0D0 /* blockens-3dTests */,
 				596DD892C9F874AA6AB06DEF /* blockens-3dUITests */,
 			);
+			sourceTree = "<group>";
+		};
+		596DDCC67609CAA0709CF942 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				596DD2A12D37746D3D063F34 /* Sky.metal */,
+				596DD8C96EC291616B9C8A41 /* utils.h */,
+				596DD2C9C80634012D035FD5 /* utils.metal */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		596DDD5243EAC3C4D6E8D61C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				596DDF03BA825BFDBE03A249 /* GameViewController.swift */,
+				596DD137D35567AD50205564 /* AppDelegate.swift */,
+				596DD9357DD8A842FE83D10E /* Renderer.swift */,
+				596DD4B5DDDC846761EB3385 /* RendererController.swift */,
+				596DD40C95A85FFE9D085E6E /* utils.swift */,
+				596DDD978E04C93DFAAFDFD7 /* Sky */,
+				596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		596DDD978E04C93DFAAFDFD7 /* Sky */ = {
+			isa = PBXGroup;
+			children = (
+				596DD79B526A7D6A0CCE5484 /* SkyRenderer.swift */,
+				596DD07DEDB38E87C5ECA674 /* SkyController.swift */,
+			);
+			path = Sky;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +237,7 @@
 		596DD58B37C26788665186D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				ORGANIZATIONNAME = apphacker;
 			};
 			buildConfigurationList = 596DD3D106E373DA1DD951FF /* Build configuration list for PBXProject "blockens-3d" */;
@@ -245,9 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				596DD1DC2DBFAA8E775F5BD2 /* AppDelegate.swift in Sources */,
-				596DD0E9A92A408FCE3C5C01 /* GameViewController.swift in Sources */,
-				596DD8BCE322E28639556188 /* Shaders.metal in Sources */,
+				596DD20F298C86E343B81ACE /* GameViewController.swift in Sources */,
+				596DD7431400248B105E0266 /* AppDelegate.swift in Sources */,
+				596DD93F54725EAAC882A0E4 /* Renderer.swift in Sources */,
+				596DD4A53617B66CB17A7FE5 /* RendererController.swift in Sources */,
+				596DD8D9C98B33BEEA6C7432 /* utils.swift in Sources */,
+				596DDD816D90179935EA4F96 /* SkyRenderer.swift in Sources */,
+				596DD3C82B2446FD7C0B7239 /* SkyController.swift in Sources */,
+				596DD45A55CF1A676FC7D878 /* Sky.metal in Sources */,
+				596DD81F1506BA2E49DBA005 /* RenderUtils.swift in Sources */,
+				596DD43B22CE92BB258E5D4C /* utils.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +526,7 @@
 				596DD868BF3331FD85F39550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		596DDEC1D9E25FA91E550A24 /* Build configuration list for PBXNativeTarget "blockens-3dTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +535,7 @@
 				596DDF51F41965309A668FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		596DDF83A10CDFA9B6E0B92B /* Build configuration list for PBXNativeTarget "blockens-3dUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +544,7 @@
 				596DDE47B886D1486AFBC244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
