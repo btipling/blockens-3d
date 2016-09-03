@@ -184,7 +184,7 @@ float3x3 matrixProduct3x3(float3x3 m1, float3x3 m2) {
     return result;
 }
 
-float4x4 matrixProduct3x3(float4x4 m1, float4x4 m2) {
+float4x4 matrixProduct4x4(float4x4 m1, float4x4 m2) {
 
     float4x4 result;
 
