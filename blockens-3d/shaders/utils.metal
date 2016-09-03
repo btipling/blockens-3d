@@ -236,6 +236,43 @@ float4 orthoGraphicProjection(float3 cameraSpaceVector, float zoomX, float zoomY
     return transform4x4(expandedCameraSpace, orthoGraphicProjectionMatrix);
 }
 
+float3 rotate3D(float3 vector, float3 angles) {
+    float3 result;
+
+    float cosX = cos(angles[0]);
+    float sinX = sin(angles[0]);
+
+    float cosY = cos(angles[1]);
+    float sinY = sin(angles[1]);
+
+    float cosZ = cos(angles[2]);
+    float sinZ = sin(angles[2]);
+
+    float3x3 xMatrix = float3x3(
+        float3(1,  0,          0),
+        float3(0,  cosX,       sinX),
+        float3(0,  sinX * -1,  cosX)
+    );
+
+    float3x3 yMatrix = float3x3(
+        float3(cosY,   0,  sinY * -1),
+        float3(0,      1,  0),
+        float3(sinY,   0,  cosY)
+    );
+
+    float3x3 zMatrix = float3x3(
+        float3(cosZ,       sinZ,   0),
+        float3(sinZ * -1,  cosZ,   0),
+        float3(0,          0,      1)
+    );
+
+    result = transform3x3(vector, xMatrix);
+    result = transform3x3(result, yMatrix);
+    result = transform3x3(result, zMatrix);
+
+    return result;
+}
+
 float2 mapToWindow(float4 clipCoordinates, float winResX, float winResY) {
     float2 spaceCoordinates;
 

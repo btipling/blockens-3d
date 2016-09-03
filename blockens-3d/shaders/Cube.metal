@@ -8,7 +8,7 @@
 
 #include "utils.h"
 
-struct CubeRotation {
+struct CubeInfo {
     float xRotation;
     float yRotation;
     float zRotation;
@@ -19,35 +19,20 @@ struct CubeRotation {
 vertex CubeOut cubeVertex(uint vid [[ vertex_id ]],
                                      constant packed_float3* position  [[ buffer(0) ]],
                                      constant packed_float3* colors  [[ buffer(1) ]],
-                                     constant CubeRotation* cubeRotation [[ buffer(2)]]) {
+                                     constant CubeInfo* cubeInfo [[ buffer(2)]]) {
 
     CubeOut outVertex;
 
-    // Projection angle:
-    //float3 n = float3(0.5, 0.5, 0.3);
-    float3 n = float3(0.03, 0.03, 0.03);
-    float nx = n[0];
-    float ny = n[1];
-    float nz = n[2];
+    float3 positionVertex = position[vid];
+    float3 cubeRotationVertex = float3(cubeInfo->xRotation, cubeInfo->yRotation, cubeInfo->zRotation);
 
-    float3 m1 = float3(1 - (nx * nx), (-nx) * ny, (-nx) * nz);
-    float3 m2 = float3((-nx) * ny, 1 - (ny * ny), (-ny) * nz);
-    float3 m3 = float3((-nx) * nz, (-ny) * nz, 1 - (nz * nz));
-
-    float3 pos = position[vid];
-    float3 proj_pos = pos;
-
-    proj_pos[0] = pos[0] * m1[0] + pos[1] * m1[1] + pos[2] * m1[2];
-    proj_pos[1] = pos[0] * m2[0] + pos[1] * m2[1] + pos[2] * m2[2];
-    proj_pos[2] = pos[0] * m3[0] + pos[1] * m3[1] + pos[2] * m3[2];
-
-    proj_pos *= 0.5;
-
-
-    outVertex.position = float4(proj_pos[0], proj_pos[1], proj_pos[2], 1.0);
+    float3 transformedPositionVertex = rotate3D(positionVertex, cubeRotationVertex);
+    float4 clipSpaceCoordinates = orthoGraphicProjection(transformedPositionVertex, 1.0, 1.0, 0.0, 1.0);
+    float2 screenCoordinates = mapToWindow(clipSpaceCoordinates, cubeInfo->winResX, cubeInfo->winResY);
 
     uint face = vid / 6;
     float3 color = colors[face];
+    outVertex.position = float4(screenCoordinates[0], screenCoordinates[1], 1, 1);
     outVertex.color = float4(color[0], color[1], color[2], 1.0);
 
     return outVertex;

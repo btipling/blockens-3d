@@ -89,6 +89,11 @@ class GameViewController: NSViewController, MTKViewDelegate {
                 print(event.keyCode)
                 break
         }
+
+        frameInfo.rotateX = Float32(Int32(frameInfo.rotateX) % 360);
+        frameInfo.rotateY = Float32(Int32(frameInfo.rotateY) % 360);
+        frameInfo.rotateZ = Float32(Int32(frameInfo.rotateZ) % 360);
+
         cube.update(frameInfo)
 
     }
