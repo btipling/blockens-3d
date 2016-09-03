@@ -51,7 +51,11 @@ float distance4(float4 from, float4 to);
 float3x3 scale3x3(float scalar, float3x3 m);
 float4x4 scale4x4(float scalar, float3x3 m);
 
+float3 transform3x3(float3 vector, float3x3 matrix);
+float4 transform4x4(float4 vector, float4x4 matrix);
+
 float3x3 matrixProduct3x3(float3x3 m1, float3x3 m2);
 float4x4 matrixProduct4x4(float4x4 m1, float4x4 m2);
+
 
 #endif /* utils_h */

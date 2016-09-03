@@ -172,6 +172,26 @@ float4x4 scale4x4(float scalar, float3x3 m) {
     return result;
 }
 
+float3 transform3x3(float3 vector, float3x3 matrix) {
+    float3 result;
+
+    for (int i = 0; i < 3; i++) {
+        result[i] = dotProduct3(vector, matrix[i]);
+    }
+
+    return result;
+}
+
+float4 transform4x4(float4 vector, float4x4 matrix) {
+    float4 result;
+
+    for (int i = 0; i < 4; i++) {
+        result[i] = dotProduct4(vector, matrix[i]);
+    }
+
+    return result;
+}
+
 float3x3 matrixProduct3x3(float3x3 m1, float3x3 m2) {
 
     float3x3 result;
