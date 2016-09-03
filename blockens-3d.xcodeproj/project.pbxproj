@@ -10,6 +10,7 @@
 		596DD09A2B3F4FAF834B233D /* CubeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDB7FC304FDA70329A38C /* CubeController.swift */; };
 		596DD0E72A909FA1C7A82A28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 596DD479A45870CEE6DD6813 /* Info.plist */; };
 		596DD20F298C86E343B81ACE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDF03BA825BFDBE03A249 /* GameViewController.swift */; };
+		596DD322B798C78350123776 /* GameWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DDE1692BB08CB62986142 /* GameWindow.swift */; };
 		596DD3C82B2446FD7C0B7239 /* SkyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596DD07DEDB38E87C5ECA674 /* SkyController.swift */; };
 		596DD43B22CE92BB258E5D4C /* utils.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DD2C9C80634012D035FD5 /* utils.metal */; };
 		596DD45A55CF1A676FC7D878 /* Sky.metal in Sources */ = {isa = PBXBuildFile; fileRef = 596DD2A12D37746D3D063F34 /* Sky.metal */; };
@@ -68,6 +69,7 @@
 		596DDC5E187FCA519D573E02 /* blockens_3dTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockens_3dTests.swift; sourceTree = "<group>"; };
 		596DDC9446643123FD79B127 /* CubeRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeRenderer.swift; sourceTree = "<group>"; };
 		596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderUtils.swift; sourceTree = "<group>"; };
+		596DDE1692BB08CB62986142 /* GameWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWindow.swift; sourceTree = "<group>"; };
 		596DDF03BA825BFDBE03A249 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		596DDF09754425A05328D667 /* blockens-3dUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockens-3dUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		596DDF6D2A95946157A60D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				596DDD978E04C93DFAAFDFD7 /* Sky */,
 				596DDDA85BB46ADE58EC30D0 /* RenderUtils.swift */,
 				596DDC7BF1F3B8E1C9CB86DD /* Cube */,
+				596DDE1692BB08CB62986142 /* GameWindow.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				596DD7ADC67140322DD410A4 /* CubeRenderer.swift in Sources */,
 				596DD09A2B3F4FAF834B233D /* CubeController.swift in Sources */,
 				596DD5EBFB1784D234D79465 /* Cube.metal in Sources */,
+				596DD322B798C78350123776 /* GameWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

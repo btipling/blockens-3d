@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/RenderUtils.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/Cube/CubeController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/Cube/CubeRenderer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/GameWindow.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/Sky/SkyController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/src/Sky/SkyRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/Assets.xcassets" isTestSource="false" />
@@ -17,8 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/shaders/utils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/shaders/utils.metal" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/blockens-3d/shaders/Cube.metal" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3d/shaders/Sky.metal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blockens-3d/shaders/Cube.metal" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3dTests/blockens_3dTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3dTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blockens-3dUITests/blockens_3dUITests.swift" isTestSource="false" />

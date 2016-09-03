@@ -20,5 +20,5 @@ vertex VertextOut skyVertex(uint vid [[ vertex_id ]],
 
 fragment float4 skyFragment(VertextOut inFrag [[stage_in]]) {
 
-    return float4(0.0, 0.0, 1.0, 1.0);
+    return float4(1.0, 1.0, 1.0, 1.0);
 }

@@ -18,10 +18,17 @@ class GameViewController: NSViewController, MTKViewDelegate {
     let inflightSemaphore = dispatch_semaphore_create(1)
 
     var renderers: [Renderer] = Array()
+    var cube: CubeController! = nil
+    var frameInfo: FrameInfo! = nil
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
+
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        let gameWindow = appDelegate.getWindow()
+        cube = CubeController()
+        gameWindow.addKeyEventCallback(handleKeyEvent)
 
         device = MTLCreateSystemDefaultDevice()
         guard device != nil else { // Fallback to a blank NSView, an application could also fallback to OpenGL here.
@@ -42,13 +49,48 @@ class GameViewController: NSViewController, MTKViewDelegate {
         // Add render controllers, order matters.
         let renderControllers: [RenderController] = [
                 SkyController(),
-                CubeController(),
+                cube,
         ]
 
         for renderController in renderControllers {
             renderers.append(renderController.renderer())
         }
         loadAssets(view, frameInfo: frameInfo)
+    }
+    func handleKeyEvent(event: NSEvent) {
+
+        switch event.keyCode {
+
+            case A_KEY:
+                frameInfo.rotateX -= ROTATION_CHANGE_MODIFIER
+                break
+            case D_KEY:
+                frameInfo.rotateX += ROTATION_CHANGE_MODIFIER
+                break
+            case S_KEY:
+                frameInfo.rotateY -= ROTATION_CHANGE_MODIFIER
+                break
+            case W_KEY:
+                frameInfo.rotateY += ROTATION_CHANGE_MODIFIER
+                break
+
+            case B_KEY:
+                frameInfo.rotateZ -= ROTATION_CHANGE_MODIFIER
+                break
+            case F_KEY:
+                frameInfo.rotateZ += ROTATION_CHANGE_MODIFIER
+                break
+
+            case P_KEY:
+                break
+            case N_KEY:
+                break
+            default:
+                print(event.keyCode)
+                break
+        }
+        cube.update(frameInfo)
+
     }
 
     func setupFrameInfo(view: MTKView) -> FrameInfo {
@@ -59,7 +101,15 @@ class GameViewController: NSViewController, MTKViewDelegate {
         let sizeDiff = abs(width - height)
         let ratio: Float = Float(sizeDiff)/Float(maxDimension)
 
-        return FrameInfo(viewWidth: Int32(width), viewHeight: Int32(height), viewDiffRatio: ratio)
+        frameInfo = FrameInfo(
+                viewWidth: Int32(width),
+                viewHeight: Int32(height),
+                viewDiffRatio: ratio,
+                rotateX: 0.0,
+                rotateY: 0.0,
+                rotateZ: 0.0
+                )
+        return frameInfo
     }
 
     func loadAssets(view: MTKView, frameInfo: FrameInfo) {

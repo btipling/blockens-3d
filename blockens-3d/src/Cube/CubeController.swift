@@ -12,4 +12,8 @@ class CubeController: RenderController {
     func renderer() -> Renderer {
         return _renderer
     }
+
+    func update(frameInfo: FrameInfo) {
+        _renderer.update(frameInfo);
+    }
 }

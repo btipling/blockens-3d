@@ -6,11 +6,25 @@
 import Foundation
 import Cocoa
 
+let ROTATION_CHANGE_MODIFIER: Float = 0.1;
+
 struct FrameInfo {
-    let viewWidth: Int32
-    let viewHeight: Int32
-    let viewDiffRatio: Float32
+    var viewWidth: Int32
+    var viewHeight: Int32
+    var viewDiffRatio: Float32
+    var rotateX: Float32
+    var rotateY: Float32
+    var rotateZ: Float32
 }
+
+let A_KEY: UInt16 = 0
+let S_KEY: UInt16 = 1
+let D_KEY: UInt16 = 2
+let F_KEY: UInt16 = 3
+let B_KEY: UInt16 = 11
+let W_KEY: UInt16 = 13
+let P_KEY: UInt16 = 35
+let N_KEY: UInt16 = 45
 
 func rgbaToNormalizedGPUColors(r: Int, g: Int, b: Int, a: Int = 255) -> [Float32] {
     return [Float32(r)/255.0, Float32(g)/255.0, Float32(b)/255.0, Float32(a)/255.0]
