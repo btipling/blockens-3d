@@ -6,10 +6,12 @@
 import Foundation
 import MetalKit
 
-struct CubeRotation {
-    let x: Float32
-    let y: Float32
-    let z: Float32
+struct CubeInfo {
+    let xRotation: Float32
+    let yRotation: Float32
+    let zRotation: Float32
+    let winResX: Float32
+    let winResY: Float32
 }
 
 class CubeRenderer: Renderer {
@@ -21,6 +23,7 @@ class CubeRenderer: Renderer {
     var cubeVertexBuffer: MTLBuffer! = nil
     var colorBuffer: MTLBuffer! = nil
     var cubeRotationBuffer: MTLBuffer! = nil
+    var viewFrameBuffer: MTLBuffer! = nil
 
     init (utils: RenderUtils) {
         renderUtils = utils
@@ -51,9 +54,15 @@ class CubeRenderer: Renderer {
     }
 
     private func updateCubeRotation(frameInfo: FrameInfo) {
-        var cubeRotation = CubeRotation(x: frameInfo.rotateX, y: frameInfo.rotateY, z: frameInfo.rotateZ)
+        var cubeRotation = CubeInfo(
+                xRotation: frameInfo.rotateX,
+                yRotation: frameInfo.rotateY,
+                zRotation: frameInfo.rotateZ,
+                winResX: Float32(frameInfo.viewWidth),
+                winResY: Float32(frameInfo.viewHeight)
+                )
         let contents = cubeRotationBuffer.contents()
-        let pointer = UnsafeMutablePointer<CubeRotation>(contents)
+        let pointer = UnsafeMutablePointer<CubeInfo>(contents)
         pointer.initializeFrom(&cubeRotation, count: 1)
     }
 

@@ -215,3 +215,36 @@ float4x4 matrixProduct4x4(float4x4 m1, float4x4 m2) {
 
     return result;
 }
+
+float4 orthoGraphicProjection(float3 cameraSpaceVector, float zoomX, float zoomY, float near, float far) {
+
+    float4 expandedCameraSpace;
+    float4x4 orthoGraphicProjectionMatrix;
+
+    expandedCameraSpace = float4(cameraSpaceVector[0], cameraSpaceVector[1], cameraSpaceVector[2], 1);
+
+    float clipPlane1 = 1/(far - near);
+    float clipPlane2 = -1 * ((far + near)/(far - near));
+
+    orthoGraphicProjectionMatrix = float4x4(
+        float4(zoomX, 0, 0, 0),
+        float4(0, zoomY, 0, 0),
+        float4(0, 0, clipPlane1, 0),
+        float4(0, 0, clipPlane2, 1)
+    );
+
+    return transform4x4(expandedCameraSpace, orthoGraphicProjectionMatrix);
+}
+
+float2 mapToWindow(float4 clipCoordinates, float winResX, float winResY) {
+    float2 spaceCoordinates;
+
+    float clipX = clipCoordinates[0];
+    float clipY = clipCoordinates[1];
+    float clipW = clipCoordinates[3];
+
+    spaceCoordinates[0] = (clipX * winResX)/(2 * clipW);
+    spaceCoordinates[1] = (clipY * winResY )/(2 * clipW);
+
+    return spaceCoordinates;
+}

@@ -57,5 +57,8 @@ float4 transform4x4(float4 vector, float4x4 matrix);
 float3x3 matrixProduct3x3(float3x3 m1, float3x3 m2);
 float4x4 matrixProduct4x4(float4x4 m1, float4x4 m2);
 
+float4 orthoGraphicProjection(float3 cameraSpaceVector, float zoomX, float zoomY, float near, float far);
+float2 mapToWindow(float4 clipCoordinates, float winResX, float winResY);
+
 
 #endif /* utils_h */

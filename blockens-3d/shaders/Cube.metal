@@ -9,9 +9,11 @@
 #include "utils.h"
 
 struct CubeRotation {
-    float x;
-    float y;
-    float z;
+    float xRotation;
+    float yRotation;
+    float zRotation;
+    float winResX;
+    float winResY;
 };
 
 vertex CubeOut cubeVertex(uint vid [[ vertex_id ]],
@@ -29,14 +31,10 @@ vertex CubeOut cubeVertex(uint vid [[ vertex_id ]],
     float nz = n[2];
 
     float3 m1 = float3(1 - (nx * nx), (-nx) * ny, (-nx) * nz);
-
     float3 m2 = float3((-nx) * ny, 1 - (ny * ny), (-ny) * nz);
-
     float3 m3 = float3((-nx) * nz, (-ny) * nz, 1 - (nz * nz));
 
-
     float3 pos = position[vid];
-
     float3 proj_pos = pos;
 
     proj_pos[0] = pos[0] * m1[0] + pos[1] * m1[1] + pos[2] * m1[2];
