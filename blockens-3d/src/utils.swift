@@ -6,7 +6,7 @@
 import Foundation
 import Cocoa
 
-let ROTATION_CHANGE_MODIFIER: Float32 = 1.0;
+let ROTATION_CHANGE_MODIFIER: Float32 = 0.1;
 
 struct FrameInfo {
     var viewWidth: Int32

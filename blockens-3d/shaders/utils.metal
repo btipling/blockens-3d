@@ -25,7 +25,7 @@ float3 crossProduct(float3 a, float3 b) {
 }
 
 float dotProduct3(float3 a, float3 b) {
-    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 }
 
 float dotProduct4(float4 a, float4 b) {
@@ -227,10 +227,14 @@ float4 orthoGraphicProjection(float3 cameraSpaceVector, float zoomX, float zoomY
     float clipPlane2 = -1 * ((far + near)/(far - near));
 
     orthoGraphicProjectionMatrix = float4x4(
+    /*
+
         float4(zoomX, 0, 0, 0),
         float4(0, zoomY, 0, 0),
         float4(0, 0, clipPlane1, 0),
         float4(0, 0, clipPlane2, 1)
+    */
+        float4(zoomX, 0, 0, 0), float4(0, zoomY, 0, 0), float4(0, 0, clipPlane1, 0), float4(0, 0, clipPlane2, 1)
     );
 
     return transform4x4(expandedCameraSpace, orthoGraphicProjectionMatrix);
@@ -249,21 +253,15 @@ float3 rotate3D(float3 vector, float3 angles) {
     float sinZ = sin(angles[2]);
 
     float3x3 xMatrix = float3x3(
-        float3(1,  0,          0),
-        float3(0,  cosX,       sinX),
-        float3(0,  sinX * -1,  cosX)
+        float3(1,  0,  0), float3(0,  cosX, sinX * -1), float3(0, sinX, cosX)
     );
 
     float3x3 yMatrix = float3x3(
-        float3(cosY,   0,  sinY * -1),
-        float3(0,      1,  0),
-        float3(sinY,   0,  cosY)
+        float3(cosY, 0, sinY), float3(0, 1,  0), float3(sinY * -1, 0, cosY)
     );
 
     float3x3 zMatrix = float3x3(
-        float3(cosZ,       sinZ,   0),
-        float3(sinZ * -1,  cosZ,   0),
-        float3(0,          0,      1)
+        float3(cosZ, sinZ * -1, 0), float3(sinZ, cosZ, 0), float3(0, 0, 1)
     );
 
     result = transform3x3(vector, xMatrix);
@@ -281,7 +279,7 @@ float2 mapToWindow(float4 clipCoordinates, float winResX, float winResY) {
     float clipW = clipCoordinates[3];
 
     spaceCoordinates[0] = (clipX * winResX)/(2 * clipW);
-    spaceCoordinates[1] = (clipY * winResY )/(2 * clipW);
+    spaceCoordinates[1] = (clipY * winResY)/(2 * clipW);
 
     return spaceCoordinates;
 }

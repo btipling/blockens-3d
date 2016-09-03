@@ -7,11 +7,11 @@ import Foundation
 import MetalKit
 
 struct CubeInfo {
-    let xRotation: Float32
-    let yRotation: Float32
-    let zRotation: Float32
-    let winResX: Float32
-    let winResY: Float32
+    var xRotation: Float32
+    var yRotation: Float32
+    var zRotation: Float32
+    var winResX: Float32
+    var winResY: Float32
 }
 
 class CubeRenderer: Renderer {
@@ -22,7 +22,7 @@ class CubeRenderer: Renderer {
 
     var cubeVertexBuffer: MTLBuffer! = nil
     var colorBuffer: MTLBuffer! = nil
-    var cubeRotationBuffer: MTLBuffer! = nil
+    var cubeInfoBuffer: MTLBuffer! = nil
     var viewFrameBuffer: MTLBuffer! = nil
 
     init (utils: RenderUtils) {
@@ -43,7 +43,7 @@ class CubeRenderer: Renderer {
         let pointer = UnsafeMutablePointer<Float32>(contents)
         pointer.initializeFrom(renderUtils.cubeColors)
 
-        cubeRotationBuffer = renderUtils.createSizedBuffer(device, bufferLabel: "cube rotation")
+        cubeInfoBuffer = renderUtils.createSizedBuffer(device, bufferLabel: "cube rotation")
 
         updateCubeRotation(frameInfo)
         print("loading cube assets done")
@@ -54,29 +54,34 @@ class CubeRenderer: Renderer {
     }
 
     private func updateCubeRotation(frameInfo: FrameInfo) {
-        var cubeRotation = CubeInfo(
+        var cubeInfo = CubeInfo(
                 xRotation: frameInfo.rotateX,
                 yRotation: frameInfo.rotateY,
                 zRotation: frameInfo.rotateZ,
                 winResX: Float32(frameInfo.viewWidth),
                 winResY: Float32(frameInfo.viewHeight)
                 )
-        let contents = cubeRotationBuffer.contents()
+        print("CubeRotation: \(cubeInfo)")
+//        if (frameInfo.rotateX != 0.0) {
+//            cubeInfo.xRotation = 90
+//            print("fudging it \(cubeInfo.xRotation)")
+//        }
+        let contents = cubeInfoBuffer.contents()
         let pointer = UnsafeMutablePointer<CubeInfo>(contents)
-        pointer.initializeFrom(&cubeRotation, count: 1)
+        pointer.initializeFrom(&cubeInfo, count: 1)
     }
 
 
     func render(renderEncoder: MTLRenderCommandEncoder) {
 
         renderUtils.setPipeLineState(renderEncoder, pipelineState: pipelineState, name: "cube")
-        renderEncoder.setCullMode(MTLCullMode.Back)
-        renderEncoder.setFrontFacingWinding(MTLWinding.Clockwise)
-        for (i, vertexBuffer) in [cubeVertexBuffer, colorBuffer].enumerate() {
+//        renderEncoder.setCullMode(MTLCullMode.Front)
+        renderEncoder.setFrontFacingWinding(MTLWinding.CounterClockwise)
+        for (i, vertexBuffer) in [cubeVertexBuffer, colorBuffer, cubeInfoBuffer].enumerate() {
             renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: i)
         }
 
-        renderUtils.drawPrimitives(renderEncoder, vertexCount: 6) //renderUtils.numVerticesInACube())
+        renderUtils.drawPrimitives(renderEncoder, vertexCount: renderUtils.numVerticesInACube())
 
     }
 }
