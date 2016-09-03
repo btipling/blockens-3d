@@ -151,3 +151,47 @@ float distance4(float4 from, float4 to) {
 
     return vectorMagnitude4(vector);
 }
+
+float3x3 scale3x3(float scalar, float3x3 m) {
+    float3x3 result;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; i++) {
+            result[i][j] = m[i][j] * scalar;
+        }
+    }
+    return result;
+}
+
+float4x4 scale4x4(float scalar, float3x3 m) {
+    float4x4 result;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; i++) {
+            result[i][j] = m[i][j] * scalar;
+        }
+    }
+    return result;
+}
+
+float3x3 matrixProduct3x3(float3x3 m1, float3x3 m2) {
+
+    float3x3 result;
+
+    for (int i = 0; i < 4; i++) {
+        float3 rowM1 = float3(m1[0][i], m1[1][i], m1[2][i]);
+        result[i] = dotProduct3(rowM1, m2[i]);
+    }
+
+    return result;
+}
+
+float4x4 matrixProduct3x3(float4x4 m1, float4x4 m2) {
+
+    float4x4 result;
+
+    for (int i = 0; i < 4; i++) {
+        float4 rowM1 = float4(m1[0][i], m1[1][i], m1[2][i], m1[3][i]);
+        result[i] = dotProduct4(rowM1, m2[i]);
+    }
+
+    return result;
+}
