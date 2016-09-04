@@ -1,7 +1,7 @@
 # blockens-3d
 
 Blockens-3d project to learn 3D GPU programming and 3D math using Metal
-<div>
+
 <img src="https://cloud.githubusercontent.com/assets/249641/18229587/8b7cbdfc-7233-11e6-8f3a-c388d0082301.png" align="left" height="400"  >
 
 I learned about vertex and matrix math from several books and online resources but mostly from [3D Math Primer for Graphics and Game Development](https://www.amazon.com/Math-Primer-Graphics-Game-Development-ebook/dp/B008KZU548/)
@@ -13,7 +13,7 @@ I learned about vertex and matrix math from several books and online resources b
  * Translation, rotation transforms and model-view rendering. 
  * I learned about wind order and culling and how the order of vertices dictate which side of a shape is the front.
  * Stencil depth, and various other 3D related aspects.
-</div>
+
 ## Controls:
 * Rotation: W, A, S, D, F, B
 * Zoom: + -
