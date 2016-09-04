@@ -32,25 +32,25 @@ class RenderUtils {
 
         // Front face
         // - ff left triangle
-        -1.0, 1.0, 1.0,
-        1.0, 1.0, 1.0,
-        -1.0, -1.0, 1.0,
+        -1.0, 1.0, -1.0,
+        1.0, 1.0, -1.0,
+        -1.0, -1.0, -1.0,
 
         // - ff right triangle
-        1.0, 1.0, 1.0,
-        1.0, -1.0, 1.0,
-        -1.0, -1.0, 1.0,
+        1.0, 1.0, -1.0,
+        1.0, -1.0, -1.0,
+        -1.0, -1.0, -1.0,
 
 
-        // Back face
+        // Back face WRONG
         // - bf left triangle
-        -1.0, 1.0, 1.0,
         1.0, 1.0, 1.0,
         -1.0, -1.0, 1.0,
+        1.0, -1.0, 1.0,
 
         // - bf right triangle
         1.0, 1.0, 1.0,
-        1.0, -1.0, 1.0,
+        -1.0, 1.0, 1.0,
         -1.0, -1.0, 1.0,
 
 
@@ -90,31 +90,31 @@ class RenderUtils {
         -1.0, 1.0, -1.0,
 
 
-        // Bottom face
+        // Bottom face WRONG
         // - bf left triangle
-        -1.0, -1.0, 1.0,
         1.0, -1.0, 1.0,
         -1.0, -1.0, -1.0,
+        1.0, -1.0, -1.0,
 
         // - bf right triangle
         1.0, -1.0, 1.0,
-        1.0, -1.0, -1.0,
+        -1.0, -1.0, 1.0,
         -1.0, -1.0, -1.0,
     ]
 
     let cubeColors: [Float32] = [
         // front
-        0.5, 0.0, 0.0,
+        red[0], red[1], red[2],
         // back
-        0.0, 0.5, 0.0,
+        green[0], green[1], green[2],
         // left
-        0.0, 0.0, 0.5,
+        orange[0], orange[1], orange[2],
         // right
-        0.5, 0.5, 0.0,
+        purple[0], purple[1], purple[2],
         // top
-        0.5, 0.0, 0.5,
+        yellow[0], yellow[1], yellow[2],
         // bottom
-        0.0, 0.5, 0.5,
+        cherry[0], cherry[1], cherry[2],
 
     ];
 

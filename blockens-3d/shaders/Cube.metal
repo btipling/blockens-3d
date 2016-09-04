@@ -12,6 +12,12 @@ struct CubeInfo {
     float xRotation;
     float yRotation;
     float zRotation;
+    float xPos;
+    float yPos;
+    float zPos;
+    float zoom;
+    float near;
+    float far;
     float winResX;
     float winResY;
 };
@@ -24,15 +30,17 @@ vertex CubeOut cubeVertex(uint vid [[ vertex_id ]],
     CubeOut outVertex;
 
     float3 positionVertex = position[vid];
+    float3 worldVector = float3(cubeInfo->xPos, cubeInfo->yPos, cubeInfo->zPos);
+
     float3 cubeRotationVertex = float3(cubeInfo->xRotation, cubeInfo->yRotation, cubeInfo->zRotation);
 
     float3 transformedPositionVertex = rotate3D(positionVertex, cubeRotationVertex);
-    float4 screenCoordinates = orthoGraphicProjection(transformedPositionVertex, 0.3, 0.3, 0.000010, 0.0000010);
-//    float2 screenCoordinates = mapToWindow(wut, cubeInfo->winResX, cubeInfo->winResY);
+    float4 translatedVertex = translationMatrix(transformedPositionVertex, worldVector);
+    float4 screenCoordinates = orthoGraphicProjection(translatedVertex, cubeInfo->zoom, cubeInfo->zoom, cubeInfo->near, cubeInfo->far);
 
     uint face = vid / 6;
     float3 color = colors[face];
-    outVertex.position = float4(screenCoordinates[0], screenCoordinates[1], 1, 1);
+    outVertex.position = screenCoordinates;
     outVertex.color = float4(color[0], color[1], color[2], 1.0);
 
     return outVertex;

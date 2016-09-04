@@ -81,6 +81,47 @@ class GameViewController: NSViewController, MTKViewDelegate {
                 frameInfo.rotateZ += ROTATION_CHANGE_MODIFIER
                 break
 
+            case UP_KEY:
+                frameInfo.yPos += POS_CHANGE_MODIFIER
+                break
+            case DOWN_KEY:
+                frameInfo.yPos -= POS_CHANGE_MODIFIER
+                break
+            case LEFT_KEY:
+                frameInfo.xPos -= POS_CHANGE_MODIFIER
+                break
+            case RIGHT_KEY:
+                frameInfo.xPos += POS_CHANGE_MODIFIER
+                break
+
+            case O_KEY:
+                frameInfo.zPos += POS_CHANGE_MODIFIER
+                break
+            case I_KEY:
+                frameInfo.zPos -= POS_CHANGE_MODIFIER
+                break
+
+            case PLUS_KEY:
+                frameInfo.zoom += ZOOM_CHANGE_MODIFIER
+                break
+            case MINUS_KEY:
+                frameInfo.zoom -= ZOOM_CHANGE_MODIFIER
+                break
+
+            case OPEN_BRACKET_KEY:
+                frameInfo.near -= POS_CHANGE_MODIFIER
+                break
+            case CLOSE_BRACKET_KEY:
+                frameInfo.near += POS_CHANGE_MODIFIER
+                break
+
+            case OPEN_ALL_KEY:
+                frameInfo.far -= POS_CHANGE_MODIFIER
+                break
+            case CLOSE_ALL_KEY:
+                frameInfo.far += POS_CHANGE_MODIFIER
+                break
+
             case P_KEY:
                 break
             case N_KEY:
@@ -111,9 +152,15 @@ class GameViewController: NSViewController, MTKViewDelegate {
                 viewWidth: Int32(width),
                 viewHeight: Int32(height),
                 viewDiffRatio: ratio,
-                rotateX: 0.0,
-                rotateY: 0.0,
-                rotateZ: 0.0
+                rotateX: 2.2,
+                rotateY: 3.9,
+                rotateZ: 1.0,
+                xPos: 0.0,
+                yPos: 0.0,
+                zPos: -1.9,
+                zoom: 0.2,
+                near: -19.7,
+                far: 15.6
                 )
         return frameInfo
     }

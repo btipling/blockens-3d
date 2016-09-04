@@ -216,28 +216,20 @@ float4x4 matrixProduct4x4(float4x4 m1, float4x4 m2) {
     return result;
 }
 
-float4 orthoGraphicProjection(float3 cameraSpaceVector, float zoomX, float zoomY, float near, float far) {
+float4 orthoGraphicProjection(float4 cameraSpaceVector, float zoomX, float zoomY, float near, float far) {
 
     float4 expandedCameraSpace;
     float4x4 orthoGraphicProjectionMatrix;
 
-    expandedCameraSpace = float4(cameraSpaceVector[0], cameraSpaceVector[1], cameraSpaceVector[2], 1);
-
-    float clipPlane1 = 1/(far - near);
-    float clipPlane2 = -1 * ((far + near)/(far - near));
+    float zPlane = far - near;
+    float clipPlane1 = -1 * (2/zPlane);
+    float clipPlane2 = -1 * ((far + near)/zPlane);
 
     orthoGraphicProjectionMatrix = float4x4(
-    /*
-
-        float4(zoomX, 0, 0, 0),
-        float4(0, zoomY, 0, 0),
-        float4(0, 0, clipPlane1, 0),
-        float4(0, 0, clipPlane2, 1)
-    */
         float4(zoomX, 0, 0, 0), float4(0, zoomY, 0, 0), float4(0, 0, clipPlane1, 0), float4(0, 0, clipPlane2, 1)
     );
 
-    return transform4x4(expandedCameraSpace, orthoGraphicProjectionMatrix);
+    return transform4x4(cameraSpaceVector, orthoGraphicProjectionMatrix);
 }
 
 float3 rotate3D(float3 vector, float3 angles) {
@@ -269,6 +261,12 @@ float3 rotate3D(float3 vector, float3 angles) {
     result = transform3x3(result, zMatrix);
 
     return result;
+}
+
+float4 translationMatrix(float3 position, float3 transVector) {
+    float4 expandedPosition = float4(position[0], position[1], position[2], 1);
+    float4x4 m = float4x4( float4(1, 0, 0, transVector[0]), float4(0, 1, 0, transVector[1]), float4(0, 0, 1, transVector[2]), float4(0, 0, 0, 1));
+    return transform4x4(expandedPosition, m);
 }
 
 float2 mapToWindow(float4 clipCoordinates, float winResX, float winResY) {
