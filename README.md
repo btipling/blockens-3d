@@ -13,7 +13,7 @@ I learned about vertex and matrix math from several books and online resources b
  * Translation, rotation transforms and model-view rendering. 
  * I learned about wind order and culling and how the order of vertices dictate which side of a shape is the front.
  * Stencil depth, and various other 3D related aspects.
-<br/>
+
 ## Controls:
 * Rotation: W, A, S, D, F, B
 * Zoom: + -
