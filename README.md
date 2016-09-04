@@ -8,12 +8,12 @@ I learned about vertex and matrix math from several books and online resources b
 
 ## This project features:
 
-* Keyboard controls for controlling the 3D cube.
-* An orthographic projection
-* Translation, rotation transforms and model-view rendering. 
-* I learned about wind order and culling and how the order of vertices dictate which side of a shape is the front.
-* Stencil depth, and various other 3D related aspects.
-
+ * Keyboard controls for controlling the 3D cube.
+ * An orthographic projection
+ * Translation, rotation transforms and model-view rendering. 
+ * I learned about wind order and culling and how the order of vertices dictate which side of a shape is the front.
+ * Stencil depth, and various other 3D related aspects.
+<br/>
 ## Controls:
 * Rotation: W, A, S, D, F, B
 * Zoom: + -
